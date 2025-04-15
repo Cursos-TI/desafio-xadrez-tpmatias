@@ -1,38 +1,48 @@
-int main() {
-    //Movimentação das Peças
-    const int BISPO_MOVIMENTACAO = 5;
-    const int TORRE_MOVIMENTACAO = 5;
-    const int RAINHA_MOVIMENTACAO = 8;
+#include <stdio.h>
 
-    //Movimentação do Bispo (For)
-    printf("Movimentação do Bispo:\n");
-    for (int i = 0; i < BISPO_MOVIMENTACAO; i++) {
+// Função recursiva para movimentação do Bispo
+void movimentacaoBispo(int i) {
+    if (i < 5) {
         printf("Diagonal superior direita\n");
+        movimentacaoBispo(i + 1);
     }
+}
 
-    //Movimentação da Torre (While)
-    printf("\nMovimentação da Torre:\n");
-    int j = 0;
-    while (j < TORRE_MOVIMENTACAO) {
+// Função recursiva para movimentação da Torre
+void movimentacaoTorre(int i) {
+    if (i < 5) {
         printf("Direita\n");
-        j++;
+        movimentacaoTorre(i + 1);
     }
+}
 
-    //Movimentação da Rainha (Do-While)
-    printf("\nMovimentação da Rainha:\n");
-    int k = 0;
-    do {
+// Função recursiva para movimentação da Rainha
+void movimentacaoRainha(int i) {
+    if (i < 8) {
         printf("Esquerda\n");
-        k++;
-    } while (k < RAINHA_MOVIMENTACAO);
+        movimentacaoRainha(i + 1);
+    }
+}
 
-    //Movimentação do Cavalo
+int main() {
+    // Movimentação do Bispo
+    printf("Movimentação do Bispo:\n");
+    movimentacaoBispo(0);
+
+    // Movimentação da Torre
+    printf("\nMovimentação da Torre:\n");
+    movimentacaoTorre(0);
+
+    // Movimentação da Rainha
+    printf("\nMovimentação da Rainha:\n");
+    movimentacaoRainha(0);
+
+    // Movimentação do Cavalo
     printf("\nMovimentação do Cavalo:\n");
     for (int i = 0; i < 2; i++) {
-        printf("Baixo\n");
+        printf("Cima\n");
     }
-    printf("Esquerda\n");
-
+    printf("Direita\n");
 
     return 0;
 }
