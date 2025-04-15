@@ -1,5 +1,5 @@
 int main() {
-    // Movimentação das Peças
+    //Movimentação das Peças
     const int BISPO_MOVIMENTACAO = 5;
     const int TORRE_MOVIMENTACAO = 5;
     const int RAINHA_MOVIMENTACAO = 8;
@@ -12,19 +12,27 @@ int main() {
 
     //Movimentação da Torre (While)
     printf("\nMovimentação da Torre:\n");
-    int i = 0;
-    while (i < TORRE_MOVIMENTACAO) {
+    int j = 0;
+    while (j < TORRE_MOVIMENTACAO) {
         printf("Direita\n");
-        i++;
+        j++;
     }
 
-    // Movimentação da Rainha (Do-While)
+    //Movimentação da Rainha (Do-While)
     printf("\nMovimentação da Rainha:\n");
-    int j = 0;
+    int k = 0;
     do {
         printf("Esquerda\n");
-        j++;
-    } while (j < RAINHA_MOVIMENTACAO);
+        k++;
+    } while (k < RAINHA_MOVIMENTACAO);
+
+    //Movimentação do Cavalo
+    printf("\nMovimentação do Cavalo:\n");
+    for (int i = 0; i < 2; i++) {
+        printf("Baixo\n");
+    }
+    printf("Esquerda\n");
+
 
     return 0;
 }
